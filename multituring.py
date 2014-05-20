@@ -24,7 +24,7 @@ def main(mt_start, tape_start):
     current_state = mt['start']
     empty_symbol = mt['empty_symbol']
 
-    tape = dict(enumerate(list(tape_start)))
+    tape = dict(enumerate(tape_start))
 
     pos = 0
     direction = 'S'
