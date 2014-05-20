@@ -4,11 +4,14 @@ import collections
 import copy
 
 def print_state(current_state, symbol, direction, tape, pos, empty_symbol):
+
     print('(%s,\t%s,\t%s)' % (current_state, symbol, direction))
+
     our_tape = copy.deepcopy(tape)
     if pos not in our_tape:
         our_tape[pos] = empty_symbol
     our_tape[pos] = "\033[4m%s\033[0m" % our_tape[pos]
+
     if our_tape != {}:
         min_key = min(our_tape.keys())
         max_key = max(our_tape.keys())
@@ -17,6 +20,7 @@ def print_state(current_state, symbol, direction, tape, pos, empty_symbol):
         print(' '.join(our_tape_contents))
     else:
         print("")
+
     print("")
 
 def main(mt_start, tape_start):
