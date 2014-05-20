@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
+
 mt = {
 
     'start': 's0',
     'stop': ['s3'],
+    'empty_symbol': '□',
 
     'tab': {
         's0': {
             'a':	('s1',	'a',	'R'),
-            None:	('s3',	None,	'R'),
+            '□':	('s3',	'□',	'R'),
         },
         's1': {
             'a':	('s2',	'a',	'R'),
