@@ -63,7 +63,7 @@ def main(mt_start, tape_start):
         pos += offset
 
 if __name__ == "__main__":
-    from ex1_a import mt
+    from ex1_c import mt
     tape_start = raw_input("Enter the tape contents: ")
     print("")
     main(mt, tape_start)
