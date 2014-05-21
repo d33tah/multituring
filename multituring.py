@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import collections
 import copy
 
@@ -23,7 +21,7 @@ def print_state(current_state, symbol, direction, tape, pos, empty_symbol):
 
     print("")
 
-def main(mt_start, tape_start):
+def multituring_main(mt, tape_start):
 
     current_state = mt['start']
     empty_symbol = mt['empty_symbol']
@@ -62,9 +60,9 @@ def main(mt_start, tape_start):
         tape[pos] = symbol
         pos += offset
 
-if __name__ == "__main__":
-    from ex1_c import mt
+def interactive_test(mt):
     tape_start = raw_input("Enter the tape contents: ")
     print("")
-    main(mt, tape_start)
+    multituring_main(mt, tape_start)
     print("The tape was accepted.")
+

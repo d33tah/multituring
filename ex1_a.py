@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 mt = {
@@ -20,3 +21,8 @@ mt = {
     },
 
 }
+
+if __name__ == "__main__":
+    import multituring
+    multituring.interactive_test(mt)
+
