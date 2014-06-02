@@ -99,6 +99,26 @@ class Multituring:
             if ret:
                 return ret
 
+def test_if_fails(mt, tape_start, should_fail=False, rerun=True,
+                  do_print=True):
+    """ Run the machine, returning True if it works as expected and
+        re-throwing the exception if an unexpected error happened. If rerun
+        is True and the machine fails, do_print is ignored. """
+    if do_print:
+        print("Testing %s..." % tape_start)
+    try:
+        m = Multituring(mt, tape_start)
+        m.run(False)
+        return not should_fail
+    except Exception:
+        if should_fail:
+            return True
+        if rerun:
+            print("Testing %s..." % tape_start)
+            m = Multituring(mt, tape_start)
+            m.run(True)
+        return False
+
 def interactive_test(mt):
     tape_start = raw_input("Enter the tape contents: ")
     print("")
